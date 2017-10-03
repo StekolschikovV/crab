@@ -1,0 +1,246 @@
+$H1: 30px
+$H2: 18px
+$H3: 16px
+
+h1
+  font-size: 30px
+h2
+  font-size: 18px
+h3
+  font-size: 16px
+
+$padding-block: 25px
+$inputs-height: 40px
+
+$color-bg-prime: #2a2928
+$color-text-info: #ef7e19
+$color-button: #e31d24
+
+*
+  font-family: Gabriola
+  padding: 0
+  margin: 0
+  user-select: none
+  outline: none !important
+
+body
+  #app
+    width: 100%
+    >div
+      display: flex
+
+
+=block($flex-to)
+  text-align: left
+  height: 50vh
+  max-width: 200px
+  min-width: 200px
+  background: $color-bg-prime
+  font-size: $H1
+  list-style: none
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: $flex-to
+  align-content: stretch
+  align-items: flex-start
+  li
+    color: white
+    width: calc(100% - #{$padding-block * 2})
+    padding: 5px $padding-block
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+      background: darken($color-bg-prime, 5%)
+  .active
+    background: lighten($color-bg-prime, 5%)
+    &:hover
+      background: lighten($color-bg-prime, 5%)
+
+=block-border
+  border: 2px solid $color-bg-prime
+
+=input
+  font-size: $H3
+  +block-border
+  text-align: left
+  padding: 10px
+  background: lighten($color-bg-prime, 25%)
+  color: white
+  transition: 0.3s
+  &::placeholder
+    color: white
+  &:focus
+    background: lighten($color-bg-prime, 15%)
+  &:active
+    background: lighten($color-bg-prime, 5%)
+
+=textarea($height)
+  +input
+  position: absolute
+  bottom: $padding-block
+  left: $padding-block
+  margin-top: $padding-block
+  min-width: calc(100% - #{$padding-block * 3})
+  max-width: calc(100% - #{$padding-block * 3})
+  min-height: $height
+  max-height: $height
+
+=submit
+  line-height: 1.3
+  background: $color-button
+  padding: 10px
+  color: white
+  font-size: $H3
+  max-height: $inputs-height
+  +block-border
+  cursor: pointer
+  transition: 0.3s
+  &:hover
+    background: darken($color-button, 5%)
+  &:active
+    background: lighten($color-button, 5%)
+
+//  Menu
+body
+  #menu-top
+    +block(flex-start)
+  #menu-bottom
+    +block(flex-end)
+
+// Content-block
+body
+  #content-block
+    width: 100%
+    >span
+      display: none
+      padding: $padding-block
+      height: calc(100% - #{$padding-block*2})
+      width: calc(100% - #{$padding-block*2})
+      position: relative
+      .info-block
+        height: 50px
+        margin-bottom: $padding-block
+        color: $color-text-info
+        font-style: italic
+      >div
+        width: 100%
+    .active
+      display: flex
+
+// PageCatalogLinks
+#page-catalog-links
+  form
+    margin-top: $padding-block
+    .line
+      height: 40px
+      display: flex
+      justify-content: space-between
+      span
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: $H3
+        min-width: 50px
+      input[type="submit"]
+        +submit
+      .min-input
+        +input
+        max-height: $inputs-height
+        max-width: 30px
+        min-width: 30px
+      >.big-input
+        +input
+        max-height: $inputs-height
+        width: calc(100% - 300px)
+  textarea
+    +textarea(calc(100% - 210px))
+
+// PagePageLinks
+#page-page-links
+  form
+    .line
+      display: flex
+      justify-content: space-between
+      width: 100%
+      max-height: 40px
+      .big-input
+        +input
+        width: calc(100% - 80px)
+      input[type="submit"]
+        +submit
+  textarea
+    +textarea(calc(100% - 210px))
+
+// PagePageData
+#page-page-data
+  form
+    .line
+      display: flex
+      justify-content: space-between
+      width: 100%
+      max-height: 40px
+      margin-bottom: $padding-block
+      input[type="text"]
+        +input
+        width: calc(30% - #{$padding-block})
+      input[type="submit"]
+        +submit
+      .big-input
+        width: calc(100% - 80px) !important
+  textarea
+    +textarea(calc(100% - 340px))
+
+// PagePageInfo
+#page-page-info
+  position: relative
+  .top
+    width: 100%
+    height: 50%
+    max-height: 180px
+    text-align: center
+    img
+      height: 100%
+      pointer-events: none
+  .bottom
+    h1, h3
+      text-align: center
+    h1, h2, h3
+      line-height: 25px
+      margin-top: $padding-block
+  .copirates
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    text-align: center
+
+
+// Preloader
+@keyframes spinner
+  0%
+    transform: rotate(45deg)
+  100%
+    transform: rotate(405deg)
+#preloader
+  display: none
+  position: absolute
+  width: 100%
+  height: 100%
+  background: $color-bg-prime
+  .center
+    width: 250px
+    height: 150px
+    position: absolute
+    text-align: center
+    margin: auto
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    img
+      animation: spinner 1s infinite
+    .text
+      color: $color-text-info
+.show
+  display: block !important

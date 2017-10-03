@@ -1,0 +1,37 @@
+{
+  "name": "webpack-electron-builder-react-sass-conf",
+  "version": "0.1.0",
+  "main": "main.js",
+  "description": "",
+  "scripts": {
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server --open --progress --colors",
+    "electron": "electron .",
+    "build": "electron-builder",
+    "dev": "concurrently --kill-others \"electron .\" \"npm run watch\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.5.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "latest"
+  },
+  "devDependencies": {
+    "electron-builder-squirrel-windows": "latest",
+    "concurrently": "latest",
+    "css-loader": "^0.28.7",
+    "electron": "1.7.8",
+    "electron-reload": "^1.2.2",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6"
+  }
+}
