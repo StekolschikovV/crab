@@ -85,6 +85,32 @@ body
   max-width: calc(100% - #{$padding-block * 3})
   min-height: $height
   max-height: $height
+  resize: none
+  &::-webkit-scrollbar
+    width: 7px
+    height: 7px
+  &::-webkit-scrollbar-button
+    width: 0px
+    height: 0px
+  &::-webkit-scrollbar-thumb
+    background: $color-bg-prime
+    border: 0px
+    border-radius: 0px
+    &:hover
+      background: #ffffff
+      background: darken($color-bg-prime, 5%)
+    &:active
+      background: darken($color-bg-prime, 10%)
+  &::-webkit-scrollbar-track
+    background: #666666
+    border: 0px none #ffffff
+    border-radius: 0px
+    &:hover
+      background: #666666
+    &:active
+      background: #333333
+  &::-webkit-scrollbar-corner
+    background: transparent
 
 =submit
   line-height: 1.3

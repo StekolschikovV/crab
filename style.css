@@ -166,13 +166,39 @@ body #content-block {
   min-width: calc(100% - 75px);
   max-width: calc(100% - 75px);
   min-height: calc(100% - 210px);
-  max-height: calc(100% - 210px); }
+  max-height: calc(100% - 210px);
+  resize: none; }
   #page-catalog-links textarea::placeholder {
     color: white; }
   #page-catalog-links textarea:focus {
     background: #514f4d; }
   #page-catalog-links textarea:active {
     background: #373634; }
+  #page-catalog-links textarea::-webkit-scrollbar {
+    width: 7px;
+    height: 7px; }
+  #page-catalog-links textarea::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px; }
+  #page-catalog-links textarea::-webkit-scrollbar-thumb {
+    background: #2a2928;
+    border: 0px;
+    border-radius: 0px; }
+    #page-catalog-links textarea::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+      background: #1d1c1c; }
+    #page-catalog-links textarea::-webkit-scrollbar-thumb:active {
+      background: #10100f; }
+  #page-catalog-links textarea::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 0px; }
+    #page-catalog-links textarea::-webkit-scrollbar-track:hover {
+      background: #666666; }
+    #page-catalog-links textarea::-webkit-scrollbar-track:active {
+      background: #333333; }
+  #page-catalog-links textarea::-webkit-scrollbar-corner {
+    background: transparent; }
 
 #page-page-links form .line {
   display: flex;
@@ -224,13 +250,39 @@ body #content-block {
   min-width: calc(100% - 75px);
   max-width: calc(100% - 75px);
   min-height: calc(100% - 210px);
-  max-height: calc(100% - 210px); }
+  max-height: calc(100% - 210px);
+  resize: none; }
   #page-page-links textarea::placeholder {
     color: white; }
   #page-page-links textarea:focus {
     background: #514f4d; }
   #page-page-links textarea:active {
     background: #373634; }
+  #page-page-links textarea::-webkit-scrollbar {
+    width: 7px;
+    height: 7px; }
+  #page-page-links textarea::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px; }
+  #page-page-links textarea::-webkit-scrollbar-thumb {
+    background: #2a2928;
+    border: 0px;
+    border-radius: 0px; }
+    #page-page-links textarea::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+      background: #1d1c1c; }
+    #page-page-links textarea::-webkit-scrollbar-thumb:active {
+      background: #10100f; }
+  #page-page-links textarea::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 0px; }
+    #page-page-links textarea::-webkit-scrollbar-track:hover {
+      background: #666666; }
+    #page-page-links textarea::-webkit-scrollbar-track:active {
+      background: #333333; }
+  #page-page-links textarea::-webkit-scrollbar-corner {
+    background: transparent; }
 
 #page-page-data form .line {
   display: flex;
@@ -285,13 +337,39 @@ body #content-block {
   min-width: calc(100% - 75px);
   max-width: calc(100% - 75px);
   min-height: calc(100% - 340px);
-  max-height: calc(100% - 340px); }
+  max-height: calc(100% - 340px);
+  resize: none; }
   #page-page-data textarea::placeholder {
     color: white; }
   #page-page-data textarea:focus {
     background: #514f4d; }
   #page-page-data textarea:active {
     background: #373634; }
+  #page-page-data textarea::-webkit-scrollbar {
+    width: 7px;
+    height: 7px; }
+  #page-page-data textarea::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px; }
+  #page-page-data textarea::-webkit-scrollbar-thumb {
+    background: #2a2928;
+    border: 0px;
+    border-radius: 0px; }
+    #page-page-data textarea::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+      background: #1d1c1c; }
+    #page-page-data textarea::-webkit-scrollbar-thumb:active {
+      background: #10100f; }
+  #page-page-data textarea::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 0px; }
+    #page-page-data textarea::-webkit-scrollbar-track:hover {
+      background: #666666; }
+    #page-page-data textarea::-webkit-scrollbar-track:active {
+      background: #333333; }
+  #page-page-data textarea::-webkit-scrollbar-corner {
+    background: transparent; }
 
 #page-page-info {
   position: relative; }

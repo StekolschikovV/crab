@@ -73,6 +73,7 @@ class PageCatalogLinks extends React.Component {
                         this.setState({
                             res: e.target.value
                         })
+                        this.sendCatalogLinks()
                     }}
                 />
             </div>
@@ -84,7 +85,7 @@ class PageCatalogLinks extends React.Component {
             this.state.url.length > 0 && this.state.from < this.state.to) {
             let arr = []
             for (let i = this.state.from; i <= this.state.to; i++) {
-                setTimeout(()=>{
+                setTimeout(() => {
                     this.props.preloaderMetod(true, 'Generation links: ' + this.state.url + i)
                 }, 0)
                 if (arr.length > 0)
@@ -97,12 +98,18 @@ class PageCatalogLinks extends React.Component {
             this.setState({
                 res: arr
             })
-            setTimeout(()=>{
-            this.props.preloaderMetod(false, '')
+            setTimeout(() => {
+                this.props.preloaderMetod(false, '')
+                this.sendCatalogLinks()
             }, 0)
+
         } else {
             alert("Enter data!")
         }
+    }
+
+    sendCatalogLinks() {
+        this.props.catalogLinks(this.state.res)
     }
 
 }
