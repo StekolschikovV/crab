@@ -7,8 +7,8 @@ class PagePageLinks extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            seletor: '',
-            res: 'aaa'
+            selector: '',
+            res: []
         }
     }
 
@@ -29,9 +29,9 @@ class PagePageLinks extends React.Component {
                             type="text"
                             placeholder={'a.linkToPage'}
                             className={'big-input'}
-                            onChange={(e)=>{
+                            onChange={(e) => {
                                 this.setState({
-                                    seletor: e.target.value
+                                    selector: e.target.value
                                 })
                             }}
                         />
@@ -41,7 +41,7 @@ class PagePageLinks extends React.Component {
                 <textarea
                     placeholder={'The results will be here...'}
                     value={this.state.res}
-                    onChange={(e)=>{
+                    onChange={(e) => {
                         this.setState({
                             res: e.target.value
                         })
@@ -52,55 +52,38 @@ class PagePageLinks extends React.Component {
     }
 
     getPageLink(i) {
-        // console.log('getPageLink', this.props.catalogLinks[i], i, this.props.catalogLinks)
-        // console.log('console.log(this.state.seletor)', this.state.seletor)
-        // this.setState({
-        //     res: ''
-        // })
-
-
-        if(i > 0){
-            // console.log('this.props.catalogLinks[i]', this.props.catalogLinks[i - 1])
-            // console.log('this.props.catalogLinks', this.props.catalogLinks)
-            // console.log('i', i)
-            console.log(this.state.res)
+        if (i > 0) {
             new Promise((resolve, reject) => {
-                request(this.props.catalogLinks[i], function (error, response, html) {
+                request(this.props.catalogLinks[i], (error, response, html) => {
                     if (!error && response.statusCode == 200) {
-                        var $ = cheerio.load(html);
-                        $('.post__title_link').each(function (i, element) {
-                            // var a = $(this).prev();
-                            // console.log(a.text());
-                            // console.log($(this).attr('href'));
-
-
-                            console.log(this.state.res)
-                            // temp.push($(this).attr('href'))
-                            // this.setState({
-                            //     res: temp
-                            // })
-
+                        let $ = cheerio.load(html)
+                        $(this.state.selector).each((i, element) => {
+                            let temp = this.state.res
+                            if (typeof temp == 'string') {
+                                temp = temp.split(",")
+                            }
+                            if (temp.length > 0)
+                                temp.push('\n' + element.attribs.href)
+                            else
+                                temp.push(element.attribs.href)
+                            this.setState({
+                                res: temp
+                            })
                         });
-
                         resolve("result");
                     } else {
-                        console.log('sss', this.state.res)
                         reject("result");
                     }
 
                 });
             }).then(
                 result => {
-                    console.log('--------------------------------------------------------- OK')
                     this.getPageLink(--i)
                 },
                 error => {
-                    console.log('--------------------------------------------------------- ER!')
                     this.getPageLink(--i)
                 }
-            );
-
-
+            )
         }
     }
 
