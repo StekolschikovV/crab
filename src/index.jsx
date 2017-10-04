@@ -6,6 +6,9 @@ import Preloader from './components/Preloader.jsx';
 
 import './style.sass';
 
+
+
+
 class Crab extends React.Component {
 
     constructor(props){

@@ -32,6 +32,10 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "request": "latest",
+    "fs": "latest",
+    "net": "latest",
+    "tls": "latest",
     "uglifyjs-webpack-plugin": "^0.4.6"
   }
 }

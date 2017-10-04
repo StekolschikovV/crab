@@ -61,7 +61,12 @@ var config = {
         // new UglifyJSPlugin({
         //     minimize: true
         // })
-    ]
+    ],
+    target: 'node'
 };
+// var config = Encore.getWebpackConfig ();
+// config.node = {fs: 'empty'};
+//
+// import fs from 'fs';
 
 module.exports = config;
