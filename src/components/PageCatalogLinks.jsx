@@ -9,7 +9,8 @@ class PageCatalogLinks extends React.Component {
             from: '',
             to: '',
             res: '',
-            test: ['111\n/n', 222, 333]
+            preloaderShow: this.props.preloader.show,
+            preloaderText: this.props.preloader.text
         }
     }
 
@@ -79,23 +80,26 @@ class PageCatalogLinks extends React.Component {
     }
 
     genetar() {
-        if (
-            this.state.to.length > 0 &&
-            this.state.from.length > 0 &&
-            this.state.url.length > 0 &&
-            this.state.from < this.state.to
-        ) {
+        if (this.state.to.length > 0 && this.state.from.length > 0 &&
+            this.state.url.length > 0 && this.state.from < this.state.to) {
             let arr = []
             for (let i = this.state.from; i <= this.state.to; i++) {
+                setTimeout(()=>{
+                    this.props.preloaderMetod(true, 'Generation links: ' + this.state.url + i)
+                }, 0)
                 if (arr.length > 0)
                     arr.push('\n' + this.state.url + i)
                 else
                     arr.push(this.state.url + i)
+                if (i == this.state.to)
+                    this.props.preloaderMetod(false, '')
             }
             this.setState({
                 res: arr
             })
-            console.log(arr, this.state.res)
+            setTimeout(()=>{
+            this.props.preloaderMetod(false, '')
+            }, 0)
         } else {
             alert("Enter data!")
         }

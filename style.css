@@ -326,7 +326,9 @@ body #content-block {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #2a2928; }
+  background: #2a2928;
+  left: 0;
+  top: 0; }
   #preloader .center {
     width: 250px;
     height: 150px;

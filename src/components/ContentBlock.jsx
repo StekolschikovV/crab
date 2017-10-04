@@ -15,7 +15,7 @@ class ContentBlock extends React.Component {
         return (
             <div id={'content-block'}>
                 <span className={this.menu.catalog ? 'active' : ''}>
-                    <PageCatalogLinks/>
+                    <PageCatalogLinks preloader={this.props.preloader} preloaderMetod={this.preloader.bind(this)}/>
                 </span>
                 <span className={this.menu.links ? 'active' : ''}>
                        <PagePageLinks/>
@@ -28,6 +28,10 @@ class ContentBlock extends React.Component {
                 </span>
             </div>
         )
+    }
+
+    preloader(satus, text) {
+        this.props.preloader(satus, text)
     }
 
 }

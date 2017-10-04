@@ -56,10 +56,11 @@ var config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css'),
-        new UglifyJSPlugin({
-            minimize: true
-        })
+        new ExtractTextPlugin('style.css')
+        // ,
+        // new UglifyJSPlugin({
+        //     minimize: true
+        // })
     ]
 };
 
