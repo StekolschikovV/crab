@@ -12,7 +12,12 @@ class PagePageLinks extends React.Component {
                 <div className="info-block">
                     In this section you can get links to pages from links on the collection page
                 </div>
-                <form>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        console.log(this.props.catalogLinks)
+                    }}
+                >
                     <div className="line">
                         <input type="text" placeholder={'a.linkToPage'} className={'big-input'}/>
                         <input type="submit" value={'Get'}/>

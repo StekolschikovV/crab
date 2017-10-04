@@ -109,7 +109,7 @@ class PageCatalogLinks extends React.Component {
     }
 
     sendCatalogLinks() {
-        this.props.catalogLinks(this.state.res)
+        this.props.catalogLinksSend(this.state.res)
     }
 
 }

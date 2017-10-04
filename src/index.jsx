@@ -25,12 +25,16 @@ class Crab extends React.Component {
         }
     }
 
-
     render() {
         return (
             <div>
                 <Menu data={this.state.menu} menuSelectEl={this.menuSelectEl.bind(this)}/>
-                <ContentBlock data={this.state.menu} preloader={this.preloader.bind(this)} catalogLinks={this.catalogLinks.bind(this)} />
+                <ContentBlock
+                    data={this.state.menu}
+                    preloader={this.preloader.bind(this)}
+                    catalogLinksSend={this.catalogLinksSend.bind(this)}
+                    catalogLinks={this.state.catalogLinks}
+                />
                 <Preloader data={this.state.preloader}/>
             </div>
         );
@@ -54,17 +58,19 @@ class Crab extends React.Component {
         })
     }
 
-    catalogLinks(arr){
+    catalogLinksSend(arr){
         let res = []
         if(typeof arr == 'object'){
             res = arr
         } else if(typeof arr == 'string'){
             res = arr.split(",")
         }
-
         let clearArr = []
         res.map((el)=>{
             clearArr.push(el.trim())
+        })
+        this.setState({
+            catalogLinks: clearArr
         })
     }
 }
