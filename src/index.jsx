@@ -38,6 +38,7 @@ class Crab extends React.Component {
                     preloader={this.preloader.bind(this)}
                     catalogLinksSend={this.catalogLinksSend.bind(this)}
                     pageLinksSend={this.pageLinksSend.bind(this)}
+                    pageLinks={this.state.pageLinks}
                     catalogLinks={this.state.catalogLinks}
                 />
                 <Preloader data={this.state.preloader}/>
@@ -81,16 +82,12 @@ class Crab extends React.Component {
 
     pageLinksSend(links){
         let clearArr = []
-        if(typeof arr !== 'object'){
-            links = links.split(",")
-        }
         links.map((el)=>{
             clearArr.push(el.trim())
         })
         this.setState({
             pageLinks: clearArr
         })
-        console.log(this.state.pageLinks)
     }
 }
 

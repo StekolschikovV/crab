@@ -29,7 +29,9 @@ class ContentBlock extends React.Component {
                        />
                 </span>
                 <span className={this.menu.data ? 'active' : ''}>
-                    <PagePageData/>
+                    <PagePageData
+                        pageLinks={this.props.pageLinks}
+                    />
                 </span>
                 <span className={this.menu.info ? 'active' : ''}>
                       <PagePageInfo/>

@@ -7,7 +7,7 @@ class PagePageLinks extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selector: '',
+            selector: '.post__title_link',
             res: []
         }
     }
@@ -30,6 +30,7 @@ class PagePageLinks extends React.Component {
                             type="text"
                             placeholder={'a.linkToPage'}
                             className={'big-input'}
+                            value={this.state.selector}
                             onChange={(e) => {
                                 this.setState({
                                     selector: e.target.value
