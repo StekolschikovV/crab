@@ -21,9 +21,7 @@ class PagePageLinks extends React.Component {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault()
-
                         this.props.preloaderMetod(true, 'Get links!')
-
                         this.getPageLink(this.props.catalogLinks.length)
                     }}
                 >
@@ -36,6 +34,7 @@ class PagePageLinks extends React.Component {
                                 this.setState({
                                     selector: e.target.value
                                 })
+                                this.props.pageLinksSend(1)
                             }}
                         />
                         <input type="submit" value={'Get'}/>
@@ -78,6 +77,8 @@ class PagePageLinks extends React.Component {
                                 temp.push('\n' + element.attribs.href)
                             else
                                 temp.push(element.attribs.href)
+
+                            this.props.pageLinksSend(temp)
                             this.setState({
                                 res: temp
                             })

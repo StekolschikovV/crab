@@ -24,7 +24,8 @@ class Crab extends React.Component {
                 show: false,
                 text: ''
             },
-            catalogLinks: []
+            catalogLinks: [],
+            pageLinks: []
         }
     }
 
@@ -36,6 +37,7 @@ class Crab extends React.Component {
                     data={this.state.menu}
                     preloader={this.preloader.bind(this)}
                     catalogLinksSend={this.catalogLinksSend.bind(this)}
+                    pageLinksSend={this.pageLinksSend.bind(this)}
                     catalogLinks={this.state.catalogLinks}
                 />
                 <Preloader data={this.state.preloader}/>
@@ -75,6 +77,20 @@ class Crab extends React.Component {
         this.setState({
             catalogLinks: clearArr
         })
+    }
+
+    pageLinksSend(links){
+        let clearArr = []
+        if(typeof arr !== 'object'){
+            links = links.split(",")
+        }
+        links.map((el)=>{
+            clearArr.push(el.trim())
+        })
+        this.setState({
+            pageLinks: clearArr
+        })
+        console.log(this.state.pageLinks)
     }
 }
 

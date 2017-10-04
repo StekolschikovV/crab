@@ -25,6 +25,7 @@ class ContentBlock extends React.Component {
                        <PagePageLinks
                            preloaderMetod={this.preloader.bind(this)}
                            catalogLinks={this.props.catalogLinks}
+                           pageLinksSend={this.props.pageLinksSend}
                        />
                 </span>
                 <span className={this.menu.data ? 'active' : ''}>
