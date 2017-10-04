@@ -8,9 +8,7 @@ class PageCatalogLinks extends React.Component {
             url: '',
             from: '',
             to: '',
-            res: '',
-            preloaderShow: this.props.preloader.show,
-            preloaderText: this.props.preloader.text
+            res: ''
         }
     }
 

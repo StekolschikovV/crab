@@ -21,6 +21,9 @@ class PagePageLinks extends React.Component {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault()
+
+                        this.props.preloaderMetod(true, 'Get links!')
+
                         this.getPageLink(this.props.catalogLinks.length)
                     }}
                 >
@@ -54,10 +57,19 @@ class PagePageLinks extends React.Component {
     getPageLink(i) {
         if (i > 0) {
             new Promise((resolve, reject) => {
-                request(this.props.catalogLinks[i], (error, response, html) => {
+                request({
+                    url: this.props.catalogLinks[i],
+                    method: "GET",
+                    timeout: 500,
+                    followRedirect: true,
+                    maxRedirects: 2
+                }, (error, response, html) => {
                     if (!error && response.statusCode == 200) {
                         let $ = cheerio.load(html)
                         $(this.state.selector).each((i, element) => {
+                            setTimeout(() => {
+                                this.props.preloaderMetod(true, 'Get links: ' + element.attribs.href)
+                            }, 0)
                             let temp = this.state.res
                             if (typeof temp == 'string') {
                                 temp = temp.split(",")
@@ -72,18 +84,28 @@ class PagePageLinks extends React.Component {
                         });
                         resolve("result");
                     } else {
-                        reject("result");
+                        setTimeout(() => {
+                            this.props.preloaderMetod(true, `Get ${this.props.catalogLinks[i]} err: ${error}`)
+                        }, 0)
+                        resolve("result");
                     }
-
                 });
             }).then(
                 result => {
-                    this.getPageLink(--i)
+                    setTimeout(() => {
+                        this.getPageLink(--i)
+                    }, 500)
                 },
                 error => {
-                    this.getPageLink(--i)
+                    setTimeout(() => {
+                        this.getPageLink(--i)
+                    }, 500)
                 }
             )
+        } else {
+            setTimeout(() => {
+                this.props.preloaderMetod(false, '')
+            }, 0)
         }
     }
 

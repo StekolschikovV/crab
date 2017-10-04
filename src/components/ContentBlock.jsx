@@ -16,13 +16,14 @@ class ContentBlock extends React.Component {
             <div id={'content-block'}>
                 <span className={this.menu.catalog ? 'active' : ''}>
                     <PageCatalogLinks
-                        preloader={this.props.preloader}
+                        // preloader={this.props.preloader}
                         preloaderMetod={this.preloader.bind(this)}
                         catalogLinksSend={this.catalogLinksSend.bind(this)}
                     />
                 </span>
                 <span className={this.menu.links ? 'active' : ''}>
                        <PagePageLinks
+                           preloaderMetod={this.preloader.bind(this)}
                            catalogLinks={this.props.catalogLinks}
                        />
                 </span>
