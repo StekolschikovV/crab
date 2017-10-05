@@ -20,7 +20,7 @@ class PagePageInfo extends React.Component {
                     <h3>v {version}</h3>
                     <h2>
                         Crab is an open source program designed to scrubbing and clean data from various sources. You can
-                        generate links to directories, scrubbing links from catalogs to pages and get data in any format.
+                        generate links to catalog, scrubbing links from catalogs to pages and get data in any format.
                         Also you can use only one stage in data processing. In any case, everything will be absolutely
                         free and open!
                     </h2>
