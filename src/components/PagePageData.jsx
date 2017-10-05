@@ -7,13 +7,20 @@ class PagePageData extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            tamplate: '{ name: {A}, time: {B}, category: {C}, tags: {D}, like: {E}, wive{F} }',
-            selectorA: '.user-info__nickname_small',
-            selectorB: '.post__time',
-            selectorC: '.post__flow',
-            selectorD: '.stacked-counter__value',
-            selectorE: '.voting-wjt__counter',
-            selectorF: '.post-stats__views-count',
+            tamplate: '',
+            selectorA: '',
+            selectorB: '',
+            selectorC: '',
+            selectorD: '',
+            selectorE: '',
+            selectorF: '',
+            // tamplate: '{ name: {A}, time: {B}, category: {C}, tags: {D}, like: {E}, wive{F} }',
+            // selectorA: '.user-info__nickname_small',
+            // selectorB: '.post__time',
+            // selectorC: '.post__flow',
+            // selectorD: '.stacked-counter__value',
+            // selectorE: '.voting-wjt__counter',
+            // selectorF: '.post-stats__views-count',
             res: []
         }
     }
@@ -25,8 +32,12 @@ class PagePageData extends React.Component {
                     You this section, you can receive data from all the selected pages. Just specify the selector and the program will collect data from the page. In this section you need to specify the format of the output data.                </div>
                 <form onSubmit={(e) => {
                     e.preventDefault()
-                    this.props.preloaderMetod(true, 'Get date from pages!')
-                    this.getData(this.props.pageLinks.length)
+                    if(this.state.tamplate == '' || this.state.selectorA == ''){
+                        alert("Enter data!")
+                    } else {
+                        this.props.preloaderMetod(true, 'Get date from pages!')
+                        this.getData(this.props.pageLinks.length)
+                    }
                 }}>
                     <div className="line">
                         <input

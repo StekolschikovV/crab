@@ -11,7 +11,7 @@ Alpha. Bug fixing.
 
 Use:
 ===================
-- [Windows client ](https://github.com/StekolschikovV/crab/raw/master/dist/Crab%20Setup%200.9.0.exe)
+- [Windows client ](https://github.com/StekolschikovV/crab/raw/master/dist/)
 - Linux client need to build. [Manual.](https://www.electron.build/)
 - Mac client need to build. [Manual.](https://www.electron.build/)
 

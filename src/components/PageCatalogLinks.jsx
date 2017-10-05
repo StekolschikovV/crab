@@ -5,9 +5,12 @@ class PageCatalogLinks extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            url: 'https://habrahabr.ru/all/page',
-            from: '0',
-            to: '5',
+            url: '',
+            // url: 'https://habrahabr.ru/all/page',
+            from: '',
+            // from: '0',
+            to: '',
+            // to: '5',
             res: ''
         }
     }

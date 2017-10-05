@@ -7,7 +7,8 @@ class PagePageLinks extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selector: '.post__title_link',
+            selector: '',
+            // selector: '.post__title_link',
             res: []
         }
     }
@@ -21,8 +22,12 @@ class PagePageLinks extends React.Component {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault()
-                        this.props.preloaderMetod(true, 'Get links!')
-                        this.getPageLink(this.props.catalogLinks.length)
+                        if(this.state.selector == ''){
+                            alert("Enter selector!")
+                        } else {
+                            this.props.preloaderMetod(true, 'Get links!')
+                            this.getPageLink(this.props.catalogLinks.length)
+                        }
                     }}
                 >
                     <div className="line">

@@ -11,7 +11,8 @@ function createWindow () {
         width: 800,
         minWidth: 650,
         minHeight: 600,
-        icon: __dirname + 'build/icon.ico'
+        icon: __dirname + 'build/icon.ico',
+        show: false
     })
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
@@ -19,6 +20,9 @@ function createWindow () {
         slashes: true
     }))
     // win.webContents.openDevTools()
+    win.once('ready-to-show', () => {
+        win.show()
+    })
     win.on('closed', () => {
         win = null
     })

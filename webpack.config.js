@@ -57,8 +57,7 @@ var config = {
     },
     plugins: [
         new ExtractTextPlugin('style.css')
-        // ,
-        // new UglifyJSPlugin({
+        // ,new UglifyJSPlugin({
         //     minimize: true
         // })
     ],
