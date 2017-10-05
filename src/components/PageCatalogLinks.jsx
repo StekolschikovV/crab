@@ -16,7 +16,7 @@ class PageCatalogLinks extends React.Component {
         return (
             <div id={'page-catalog-links'}>
                 <div className="info-block">
-                    In this section, you can collect links to directories page of which will be used in the future.
+                    You this section you can generate links to catalog. Specify the base address and specify the range in which to generate links. For example https://habrahabr.ru/all/page from 1 to 50.
                 </div>
                 <form
                     onSubmit={(e) => {

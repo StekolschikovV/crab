@@ -16,7 +16,7 @@ class PagePageLinks extends React.Component {
         return (
             <div id={'page-page-links'}>
                 <div className="info-block">
-                    In this section you can get links to pages from links on the collection page
+                    You this section you can get the data selector from all to catalogs. Just specify the selector and the program will collect links to pages. For example, a.link.
                 </div>
                 <form
                     onSubmit={(e) => {

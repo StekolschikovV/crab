@@ -22,8 +22,7 @@ class PagePageData extends React.Component {
         return (
             <div id={'page-page-data'}>
                 <div className="info-block">
-                    In this section, you can take the data with each page selected
-                </div>
+                    You this section, you can receive data from all the selected pages. Just specify the selector and the program will collect data from the page. In this section you need to specify the format of the output data.                </div>
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     this.props.preloaderMetod(true, 'Get date from pages!')
