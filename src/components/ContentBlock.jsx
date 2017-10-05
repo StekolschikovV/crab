@@ -30,6 +30,7 @@ class ContentBlock extends React.Component {
                 </span>
                 <span className={this.menu.data ? 'active' : ''}>
                     <PagePageData
+                        preloaderMetod={this.preloader.bind(this)}
                         pageLinks={this.props.pageLinks}
                     />
                 </span>

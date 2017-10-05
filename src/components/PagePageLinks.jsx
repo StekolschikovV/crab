@@ -60,9 +60,9 @@ class PagePageLinks extends React.Component {
                 request({
                     url: this.props.catalogLinks[i],
                     method: "GET",
-                    timeout: 500,
+                    timeout: 1000,
                     followRedirect: true,
-                    maxRedirects: 2
+                    maxRedirects: 10
                 }, (error, response, html) => {
                     if (!error && response.statusCode == 200) {
                         let $ = cheerio.load(html)

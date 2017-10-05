@@ -12,13 +12,13 @@ class Menu extends React.Component {
             <div id={'menu'}>
                 <ul id={'menu-top'}>
                     <li className={this.menu.catalog ? 'active' : ''} onClick={this.props.menuSelectEl} data-id={'catalog'}>
-                        Catalog links
+                        1. Catalog links
                     </li>
                     <li className={this.menu.links ? 'active' : ''} onClick={this.props.menuSelectEl.bind(this)} data-id={'links'}>
-                        Page links
+                        2. Page links
                     </li>
                     <li className={this.menu.data ? 'active' : ''} onClick={this.props.menuSelectEl.bind(this)} data-id={'data'}>
-                        Page data
+                        3. Page data
                     </li>
                 </ul>
                 <ul id={'menu-bottom'}>
