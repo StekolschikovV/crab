@@ -1,5 +1,5 @@
 
-[![crab](https://raw.githubusercontent.com/StekolschikovV/crab/master/img/crab-md-promo.png)](https://youtu.be/-hlMI1d_5_w)
+[![crab](https://raw.githubusercontent.com/StekolschikovV/crab/master/img/promo.png)](https://youtu.be/-hlMI1d_5_w)
 
 About:
 ===================
